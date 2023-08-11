@@ -5,17 +5,8 @@ import { HelloWorld } from './components/HelloWorld'
 export const App = defineComponent({
   render() {
     return hFragment([
-      h(Header, {}),
       h('main', { class: classes.main }, [h(HelloWorld, {})]),
       h(Footer, {}),
-    ])
-  },
-})
-
-const Header = defineComponent({
-  render() {
-    return h('header', { class: classes.header }, [
-      h('h1', {}, ['Build a frontend framework']),
     ])
   },
 })
@@ -32,6 +23,15 @@ const Footer = defineComponent({
             target: '_blank',
           },
           ['fe-fwk'],
+        ),
+        h('span', {}, [' | ']),
+        h(
+          'a',
+          {
+            href: 'http://mng.bz/aM2o',
+            target: '_blank',
+          },
+          ['Buy the book'],
         ),
       ]),
     ])

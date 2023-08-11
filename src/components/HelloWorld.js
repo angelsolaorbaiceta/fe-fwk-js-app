@@ -5,13 +5,33 @@ import classes from './HelloWorld.module.css'
 export const HelloWorld = defineComponent({
   render() {
     return hFragment([
-      h('h2', {}, ['Buy the book today and start learning today!']),
-      h('img', {
-        src: coverImage,
-        alt: 'Build a frontend framework book cover',
-        class: classes.cover,
-        'data-qa': 'cover-img',
-      }),
+      h('h1', {}, ['Build your own frontend framework']),
+      h('p', {}, [
+        h(
+          'a',
+          {
+            href: 'http://mng.bz/aM2o',
+            target: '_blank',
+          },
+          ['Buy the book'],
+        ),
+        ' and start learning today!',
+      ]),
+      h(
+        'a',
+        {
+          href: 'http://mng.bz/aM2o',
+          target: '_blank',
+        },
+        [
+          h('img', {
+            src: coverImage,
+            alt: 'Build a frontend framework book cover',
+            class: classes.cover,
+            'data-qa': 'cover-img',
+          }),
+        ],
+      ),
     ])
   },
 })
