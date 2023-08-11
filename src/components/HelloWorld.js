@@ -1,6 +1,7 @@
 import { defineComponent, h, hFragment } from 'fe-fwk'
 import coverImage from '../assets/cover.png'
 import classes from './HelloWorld.module.css'
+import { ActivitySuggestion } from './ActivitySuggestion'
 
 export const HelloWorld = defineComponent({
   render() {
@@ -32,6 +33,8 @@ export const HelloWorld = defineComponent({
           }),
         ],
       ),
+
+      h(ActivitySuggestion),
     ])
   },
 })
