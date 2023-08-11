@@ -1,5 +1,6 @@
 {
   "name": "fe-fwk-js-application",
+  "private": true,
   "version": "1.0.0",
   "description": "An application built with fe-fwk; a framework to teach you how to build your own frontend framework.",
   "main": "index.js",
