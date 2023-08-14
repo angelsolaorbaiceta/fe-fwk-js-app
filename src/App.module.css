@@ -4,14 +4,3 @@
   margin: 6em auto 2em;
   text-align: center;
 }
-
-.footer {
-  background-color: black;
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
-
-  & a {
-    color: white;
-  }
-}
