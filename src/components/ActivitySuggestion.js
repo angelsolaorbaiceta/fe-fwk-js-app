@@ -24,14 +24,19 @@ export const ActivitySuggestion = defineComponent({
 
     return h('div', {}, [
       h('h3', {}, ['Activity suggestion']),
-      isLoading ? h('p', {}, ['Loading...']) : Suggestion(activity),
+      isLoading
+        ? h('p', { 'data-qa': 'loading' }, ['Loading...'])
+        : Suggestion(activity),
     ])
   },
 })
 
 function Suggestion({ activity, type }) {
   return hFragment([
-    h('p', {}, [activity, h('span', { class: classes.tag }, [type])]),
+    h('p', { 'data-qa': 'activity' }, [
+      activity,
+      h('span', { class: classes.tag }, [type]),
+    ]),
     h('p', { class: classes.footnote }, [
       'Provided by ',
       h('a', { href: 'https://www.boredapi.com/', target: '_blank' }, [
