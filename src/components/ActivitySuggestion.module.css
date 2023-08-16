@@ -1,3 +1,9 @@
+.reload {
+  margin-left: 0.25em;
+  font-size: x-large;
+  cursor: pointer;
+}
+
 .tag {
   margin: 0 0.5em;
   background-color: brown;

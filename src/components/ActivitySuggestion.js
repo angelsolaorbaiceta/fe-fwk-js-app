@@ -23,11 +23,28 @@ export const ActivitySuggestion = defineComponent({
     const { isLoading, activity } = this.state
 
     return h('div', {}, [
-      h('h3', {}, ['Activity suggestion']),
+      h('h3', {}, [
+        'Activity suggestion',
+        h(
+          'span',
+          {
+            class: classes.reload,
+            'data-qa': 'reload',
+            on: { click: this.loadActivity },
+          },
+          ['⟲'],
+        ),
+      ]),
       isLoading
         ? h('p', { 'data-qa': 'loading' }, ['Loading...'])
         : Suggestion(activity),
     ])
+  },
+
+  async loadActivity() {
+    this.updateState({ isLoading: true, activity: null })
+    const activity = await getRandomActivity()
+    this.updateState({ isLoading: false, activity })
   },
 })
 
